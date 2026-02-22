@@ -126,7 +126,7 @@ class Flickr:
             logger.info('{title}, {pathname}'.format(title=title, pathname=pathname))
 
             try:
-                response = self.api.upload(filename=pathname, title=title, tags=tag, async=1, is_public=0, is_family=0, is_friend=0)
+                response = self.api.upload(filename=pathname, title=title, tags=tag, asynchronous=1, is_public=0, is_family=0, is_friend=0)
                 tickets.append(response.find('ticketid').text)
                 passed += 1
             except flickrapi.exceptions.FlickrError as e:
